@@ -28,23 +28,23 @@ def create_layout(app: Dash) -> html.Div:
                 dbc.Row(
                     [
                         dbc.Col(html.Div(className='Likelihood',
-                                         children=[likelihood_info.render()],
-                                         width=2)),
+                                         children=[likelihood_info.render()]),
+                                         width=2),
                         dbc.Col(html.Div(className='BayesGraph',
-                                         children=[bayes_graph.render()],
-                                         width=8)),
+                                         children=[bayes_graph.render()]),
+                                         width=8),
                         dbc.Col(html.Div(className='FalsePositive',
-                                         children=[falsepos_info.render()],
-                                         width=2)),
+                                         children=[falsepos_info.render()]),
+                                         width=2),
                     ]),
                 dbc.Row(
                     [
                         dbc.Col(html.Div(className='Marginal',
-                                         children=[marginal_info.render()],
-                                         width=5)),
+                                         children=[marginal_info.render()]),
+                                         width=5),
                         dbc.Col(html.Div(className='Posterior',
-                                         children=[posterior_info.render()],
-                                         width=5)),
+                                         children=[posterior_info.render()]),
+                                         width=5),
                     ]),
             ])
         ]
