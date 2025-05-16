@@ -21,6 +21,7 @@ def create_layout(app: Dash) -> html.Div:
                     children=[
                         scenario_dropdown.render()
                     ]))),
+                html.Br(),
                 dbc.Row(dbc.Col(html.Div(
                     className='Prior',
                     children=[
@@ -29,25 +30,24 @@ def create_layout(app: Dash) -> html.Div:
                 dbc.Row(
                     [
                         dbc.Col(html.Div(className='Likelihood',
-                                         children=[likelihood_info.render(app)]),
-                                         width=2),
+                                         children=[likelihood_info.render(app)])),
                         dbc.Col(html.Div(className='BayesGraph',
-                                         children=[bayes_graph.render(app)],
-                                         style={'margin-left': '25%'}),
-                                         width=8),
+                                         children=[bayes_graph.render(app)])),
                         dbc.Col(html.Div(className='FalsePositive',
-                                         children=[falsepos_info.render(app)]),
-                                         width=2),
-                    ]),
+                                         children=[falsepos_info.render(app)])),
+                    ],
+                    className="g-0"),
+                html.Br(),
                 dbc.Row(
                     [
                         dbc.Col(html.Div(className='Marginal',
-                                         children=[marginal_info.render()]),
+                                         children=[marginal_info.render(app)]),
                                          width=5),
                         dbc.Col(html.Div(className='Posterior',
                                          children=[posterior_info.render()]),
                                          width=5),
-                    ]),
+                    ],
+                    className="g-0")
             ])
         ]
     )

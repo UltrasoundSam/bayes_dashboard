@@ -30,5 +30,5 @@ def render(app: Dash) -> html.Div:
 
     return html.Div([msg, slider],
                     style={'textAlign': 'center',
-                           'width': '66%',
-                           'margin-left': '16%'})
+                           'width': '32%',
+                           'margin-left': '34%'})

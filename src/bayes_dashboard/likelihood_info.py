@@ -16,11 +16,12 @@ def render(app: Dash) -> html.Div:
         step=1,
         value=40,
         marks={i: f'{i}%' for i in range(0, 101, 10)},
-        vertical=True
+        vertical=True,
+        verticalHeight=600
     )
 
     # Create label
-    msg = html.Label('The prior is 80 %', id=ids.LIKE_INFO,
+    msg = html.Label(' ', id=ids.LIKE_INFO,
                      style={"transform": "rotate(270deg)"})
 
     # Create callball
@@ -37,11 +38,13 @@ def render(app: Dash) -> html.Div:
     # Arrange format
     fmt = dbc.Row(
         [
-            dbc.Col(html.Div(msg), width=8),
-            dbc.Col(html.Div(slider), width=4)
+            dbc.Col(html.Div(msg)),
+            dbc.Col(html.Div(slider))
         ],
         align='center',
-        justify='end'
+        justify='end',
+        className="g-0"
     )
 
-    return html.Div(fmt)
+    return html.Div(fmt,
+                    style={'margin-left': '80%'})

@@ -16,6 +16,7 @@ def render(app: Dash) -> html.Div:
         step=1,
         value=10,
         vertical=True,
+        verticalHeight=600,
         marks={i: f'{i}%' for i in range(0, 101, 10)}
     )
 
