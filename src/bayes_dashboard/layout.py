@@ -28,7 +28,7 @@ def create_layout(app: Dash) -> html.Div:
                 dbc.Row(
                     [
                         dbc.Col(html.Div(className='Likelihood',
-                                         children=[likelihood_info.render()]),
+                                         children=[likelihood_info.render(app)]),
                                          width=2),
                         dbc.Col(html.Div(className='BayesGraph',
                                          children=[bayes_graph.render()]),
