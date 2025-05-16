@@ -44,7 +44,7 @@ def create_layout(app: Dash) -> html.Div:
                                          children=[marginal_info.render(app)]),
                                          width=5),
                         dbc.Col(html.Div(className='Posterior',
-                                         children=[posterior_info.render()]),
+                                         children=[posterior_info.render(app)]),
                                          width=5),
                     ],
                     className="g-0")
