@@ -10,9 +10,10 @@ def render() -> html.Div:
         id=ids.SCENARIO_DROPDOWN,
         options=[
             {"label": "Farmer Steve", "value": "Steve"},
-            {"label": "Test Efficacy", "value": "drugs"}],
+            {"label": "Test Efficacy", "value": "drugs"},
+            {"label": "Generic Bayes", "value": "bayes"}],
         multi=False,
-        value="Farmer Steve",
+        value="Steve",
         style={'texAlign': 'center'}
     )
 
