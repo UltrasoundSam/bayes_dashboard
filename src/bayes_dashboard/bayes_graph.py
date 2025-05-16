@@ -41,6 +41,9 @@ def render(app: Dash) -> html.Div:
                       fillcolor='black',
                       opacity=0.3)
 
+        fig.update_layout(width=615, height=600,
+                          margin=dict(l=0, r=0, t=0, b=0))
+
         return fig
 
     comp = html.Div(dcc.Graph(id=ids.BAYES_GRAPH))
