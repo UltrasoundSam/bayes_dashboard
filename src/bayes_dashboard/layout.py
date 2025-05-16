@@ -23,7 +23,7 @@ def create_layout(app: Dash) -> html.Div:
                 dbc.Row(dbc.Col(html.Div(
                     className='Prior',
                     children=[
-                        prior_info.render()
+                        prior_info.render(app)
                     ]))),
                 dbc.Row(
                     [
