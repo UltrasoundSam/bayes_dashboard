@@ -13,7 +13,10 @@ def render() -> html.Div:
             {"label": "Test Efficacy", "value": "drugs"}],
         multi=False,
         value="Farmer Steve",
+        style={'texAlign': 'center'}
     )
 
     return html.Div(dropdown,
-                    style={'textAlign': 'center'})
+                    style={'textAlign': 'center',
+                           'width': '20%',
+                           'margin-left': '40%'})
