@@ -5,6 +5,7 @@ from . import scenario_dropdown, prior_info, likelihood_info
 from . import falsepos_info, marginal_info, posterior_info
 from . import bayes_graph
 
+
 def create_layout(app: Dash) -> html.Div:
     '''Defines layout for Dashboard
     '''
@@ -30,11 +31,11 @@ def create_layout(app: Dash) -> html.Div:
                 dbc.Row(
                     [
                         dbc.Col(html.Div(className='Likelihood',
-                                         children=[likelihood_info.render(app)])),
+                                         children=[likelihood_info.render(app)])),  # noqa: E501
                         dbc.Col(html.Div(className='BayesGraph',
                                          children=[bayes_graph.render(app)])),
                         dbc.Col(html.Div(className='FalsePositive',
-                                         children=[falsepos_info.render(app)])),
+                                         children=[falsepos_info.render(app)])),  # noqa: E501
                     ],
                     className="g-0"),
                 html.Br(),
@@ -42,10 +43,10 @@ def create_layout(app: Dash) -> html.Div:
                     [
                         dbc.Col(html.Div(className='Marginal',
                                          children=[marginal_info.render(app)]),
-                                         width=5),
+                                width=5),
                         dbc.Col(html.Div(className='Posterior',
-                                         children=[posterior_info.render(app)]),
-                                         width=5),
+                                         children=[posterior_info.render(app)]),  # noqa: E501
+                                width=5),
                     ],
                     className="g-0")
             ])
