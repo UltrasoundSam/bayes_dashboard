@@ -3,6 +3,7 @@ from dash import html, dcc, Dash
 from dash import Output, Input
 
 from . import ids
+from .custom_phrases import PHRASES
 
 
 def render(app: Dash) -> html.Div:
@@ -27,13 +28,15 @@ def render(app: Dash) -> html.Div:
     # Create callball
     @app.callback(
         Output(ids.LIKE_INFO, "children"),
-        [Input(ids.LIKE_SLIDER, "value")]
+        [Input(ids.LIKE_SLIDER, "value"),
+         Input(ids.SCENARIO_DROPDOWN, 'value')]
     )
-    def update_likelihoods(slider_value: int) -> str:
+    def update_likelihoods(slider_value: int,
+                           scenario: str) -> str:
         '''Updates likelihood test info'''
-        msg = f'The likelihood is {slider_value:.1f}%'
+        cust_phase = PHRASES[scenario]['likelihood']
+        msg = f'{slider_value:.0f}% {cust_phase}'
         return msg
-
 
     # Arrange format
     fmt = dbc.Row(
@@ -47,4 +50,4 @@ def render(app: Dash) -> html.Div:
     )
 
     return html.Div(fmt,
-                    style={'margin-left': '80%'})
+                    style={'margin-left': '70%'})
