@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "bayes-dashboard"
-version = "0.2.6"
+version = "0.2.7"
 description = ""
 authors = ["Sam Hill <s.hill@yorksj.ac.uk>"]
 readme = "README.md"

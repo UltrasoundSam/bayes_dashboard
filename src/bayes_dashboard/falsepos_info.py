@@ -3,6 +3,7 @@ from dash import html, dcc, Dash
 from dash import Output, Input
 
 from . import ids
+from .custom_phrases import PHRASES
 
 
 def render(app: Dash) -> html.Div:
@@ -27,11 +28,14 @@ def render(app: Dash) -> html.Div:
     # Create callback
     @app.callback(
         Output(ids.FALSE_INFO, "children"),
-        [Input(ids.FALSE_SLIDER, "value")]
+        [Input(ids.FALSE_SLIDER, "value"),
+         Input(ids.SCENARIO_DROPDOWN, 'value')]
     )
-    def update_falsepos(slider_value: int) -> str:
+    def update_falsepos(slider_value: int,
+                        scenario: str) -> str:
         '''Updates false positive info'''
-        msg = f'The False Positive Rate is {slider_value:.1f}%'
+        cust_phase = PHRASES[scenario]['false_pos']
+        msg = f'{slider_value:.0f}% {cust_phase}'
         return msg
 
     # Arrange format
