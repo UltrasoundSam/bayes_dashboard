@@ -34,7 +34,7 @@ def create_layout(app: Dash) -> html.Div:
                                          children=[bayes_graph.render()]),
                                          width=8),
                         dbc.Col(html.Div(className='FalsePositive',
-                                         children=[falsepos_info.render()]),
+                                         children=[falsepos_info.render(app)]),
                                          width=2),
                     ]),
                 dbc.Row(

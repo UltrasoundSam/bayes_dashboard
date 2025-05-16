@@ -1,3 +1,4 @@
+import dash_bootstrap_components as dbc
 from dash import html, dcc, Dash
 from dash import Output, Input
 
@@ -13,13 +14,14 @@ def render(app: Dash) -> html.Div:
         min=0,
         max=100,
         step=1,
-        value=30,
+        value=40,
         marks={i: f'{i}%' for i in range(0, 101, 10)},
         vertical=True
     )
 
     # Create label
-    msg = html.Label('The prior is 80 %', id=ids.LIKE_INFO)
+    msg = html.Label('The prior is 80 %', id=ids.LIKE_INFO,
+                     style={"transform": "rotate(270deg)"})
 
     # Create callball
     @app.callback(
@@ -32,7 +34,14 @@ def render(app: Dash) -> html.Div:
         return msg
 
 
-    return html.Div([msg, slider],
-                     style={'textAlign': 'center',
-                            'width': '66%',
-                            'margin-left': '16%'})
+    # Arrange format
+    fmt = dbc.Row(
+        [
+            dbc.Col(html.Div(msg), width=8),
+            dbc.Col(html.Div(slider), width=4)
+        ],
+        align='center',
+        justify='end'
+    )
+
+    return html.Div(fmt)
