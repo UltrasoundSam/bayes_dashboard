@@ -14,6 +14,7 @@ def create_layout(app: Dash) -> html.Div:
             html.H1("Interactive Bayes Theorem Explorer",
                     style={'text-align': 'center'}),
             html.Hr(),
+            html.Br(),
             html.Div([
                 dbc.Row(dbc.Col(html.Div(
                     className='dropdown-container',
@@ -31,7 +32,7 @@ def create_layout(app: Dash) -> html.Div:
                                          children=[likelihood_info.render(app)]),
                                          width=2),
                         dbc.Col(html.Div(className='BayesGraph',
-                                         children=[bayes_graph.render()]),
+                                         children=[bayes_graph.render(app)]),
                                          width=8),
                         dbc.Col(html.Div(className='FalsePositive',
                                          children=[falsepos_info.render(app)]),
