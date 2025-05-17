@@ -41,16 +41,19 @@ def render(app: Dash) -> html.Div:
             html.H5(f'{true_positives:.1%}',
                     style={'background-color': '#f2767b',
                            'width': '15%',
-                           'margin-left': '42.5%'}),
+                           'margin-left': '42.5%',
+                           'border-radius': '5px'}),
             html.Hr(style={'width': '32%',
                            'margin-left': '34%'}),
             html.H5(
                 [
                     html.Span(f'{true_positives:.1%}',
-                              style={'background-color': '#f2767b'}),
+                              style={'background-color': '#f2767b',
+                                     'border-radius': '5px'}),
                     html.Span(' + '),
                     html.Span(f'{false_positives: .1%}',
-                              style={'background-color': '#7276fb'})
+                              style={'background-color': '#7276fb',
+                                     'border-radius': '5px'})
                 ]
             )
         ], style={'textAlign': 'center'})

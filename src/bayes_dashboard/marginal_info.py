@@ -41,10 +41,12 @@ def render(app: Dash) -> html.Div:
                     html.Span(f'{true_positives:.1%}',
                               style={'background-color': '#f2767b',
                                      'margin': 0,
-                                     'padding': 0}),
+                                     'padding': 0,
+                                     'border-radius': '5px'}),
                     html.Span(' + '),
                     html.Span(f'{false_positives: .1%}',
-                              style={'background-color': '#7276fb'})
+                              style={'background-color': '#7276fb',
+                                     'border-radius': '5px'})
                 ]
             )  # noqa: E501
         ], style={'textAlign': 'center'})
