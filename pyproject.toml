@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "bayes-dashboard"
-version = "0.2.11"
+version = "0.2.12"
 description = ""
 authors = ["Sam Hill <s.hill@yorksj.ac.uk>"]
 readme = "README.md"
@@ -12,6 +12,7 @@ dash = "^3.0.4"
 dash-bootstrap-components = "^2.0.2"
 pandas = "^2.2.3"
 plotly = "^6.1.0"
+gunicorn = "^23.0.0"
 
 
 [build-system]

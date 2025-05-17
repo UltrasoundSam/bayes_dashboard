@@ -4,6 +4,7 @@ from dash import Output, Input
 
 from . import ids
 
+
 def render(app: Dash) -> html.Div:
     '''Renders nice graph
     '''
