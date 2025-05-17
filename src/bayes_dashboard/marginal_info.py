@@ -1,6 +1,9 @@
 from dash import html, Dash
 from dash import Output, Input
+
 from . import ids
+from .custom_phrases import PHRASES
+
 
 def render(app: Dash) -> html.Div:
     '''Renders information about Marginal to screen
@@ -9,11 +12,13 @@ def render(app: Dash) -> html.Div:
         Output(ids.MARGINAL_RESULTS, 'children'),
         [Input(ids.PRIOR_SLIDER, "value"),
          Input(ids.LIKE_SLIDER, "value"),
-         Input(ids.FALSE_SLIDER, "value")]
+         Input(ids.FALSE_SLIDER, "value"),
+         Input(ids.SCENARIO_DROPDOWN, 'value')]
     )
     def update_marginal(prior: int,
                         likelihood: int,
-                        false_positive: int) -> html.Div:
+                        false_positive: int,
+                        scenario: str) -> html.Div:
         '''Calculates probability of people that fit the
         evidence'''
 
@@ -23,11 +28,25 @@ def render(app: Dash) -> html.Div:
 
         marginal = true_positives + false_positives
 
-        return html.Div([
-            html.P(f'We are likely to see the evidence at a rate of {marginal:.1%} from any group in population'),
-            html.P(f'This consists of {true_positives:.1%} of the population in the true positive group'),
-            html.P(f'And {false_positives:.1%} of the population in the false positive group')
-        ])
+        # Get custom message from dict
+        cust_msg = PHRASES[scenario]['marginal']
 
+        return html.Div([
+            html.H4('Marginal/Evidence P(E)'),
+            html.P(cust_msg),
+            html.H3(f'{marginal:.1%}'),
+            html.P('This percentage is comprised of the following groups:'),
+            html.H5(
+                [
+                    html.Span(f'{true_positives:.1%}',
+                              style={'background-color': '#f2767b',
+                                     'margin': 0,
+                                     'padding': 0}),
+                    html.Span(' + '),
+                    html.Span(f'{false_positives: .1%}',
+                              style={'background-color': '#7276fb'})
+                ]
+            )  # noqa: E501
+        ], style={'textAlign': 'center'})
 
     return html.Div(id=ids.MARGINAL_RESULTS)

@@ -17,7 +17,7 @@ PHRASES = {
         'prior': 'is your prior expectation',
         'likelihood': 'The likelihood is',
         'false_pos': 'The False Positive Rate is',
-        'Marginal': 'We are likely to see evidence from the total population at a rate of',  # noqa: E501
+        'Marginal': 'We are likely to see evidence from the total population at a rate of...',  # noqa: E501
         'posterior': 'What is probability of hypothesis being true given the evidence?'  # noqa: E501
     }
 }

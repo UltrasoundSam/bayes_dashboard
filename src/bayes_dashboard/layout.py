@@ -38,7 +38,7 @@ def create_layout(app: Dash) -> html.Div:
                                          children=[falsepos_info.render(app)])),  # noqa: E501
                     ],
                     className="g-0"),
-                html.Br(),
+                html.Br(), html.Br(), html.Br(),
                 dbc.Row(
                     [
                         dbc.Col(html.Div(className='Marginal',
