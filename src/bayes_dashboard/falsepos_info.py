@@ -23,7 +23,8 @@ def render(app: Dash) -> html.Div:
 
     # Create label
     msg = html.Label('The prior is 80 %', id=ids.FALSE_INFO,
-                     style={"transform": "rotate(90deg)"})
+                     style={"writingMode": "vertical-rl",
+                            "textOrientation": "mixed"})
 
     # Create callback
     @app.callback(
@@ -34,8 +35,12 @@ def render(app: Dash) -> html.Div:
     def update_falsepos(slider_value: int,
                         scenario: str) -> str:
         '''Updates false positive info'''
-        cust_phase = PHRASES[scenario]['false_pos']
-        msg = f'{slider_value:.0f}% {cust_phase}'
+        cust_phrase = PHRASES[scenario]['false_pos']
+        if scenario == 'Steve':
+            msg = f'{slider_value:.0f}% {cust_phrase}'
+        else:
+            msg = f'{cust_phrase} {slider_value:.0f}%'
+
         return msg
 
     # Arrange format

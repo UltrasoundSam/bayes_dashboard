@@ -23,7 +23,9 @@ def render(app: Dash) -> html.Div:
 
     # Create label
     msg = html.Label(' ', id=ids.LIKE_INFO,
-                     style={"transform": "rotate(270deg)"})
+                     style={"writingMode": "vertical-lr",
+                            "textOrientation": "mixed",
+                            "transform": "rotate(180deg)"})
 
     # Create callball
     @app.callback(
@@ -34,8 +36,12 @@ def render(app: Dash) -> html.Div:
     def update_likelihoods(slider_value: int,
                            scenario: str) -> str:
         '''Updates likelihood test info'''
-        cust_phase = PHRASES[scenario]['likelihood']
-        msg = f'{slider_value:.0f}% {cust_phase}'
+        cust_phrase = PHRASES[scenario]['likelihood']
+
+        if scenario == 'Steve':
+            msg = f'{slider_value:.0f}% {cust_phrase}'
+        else:
+            msg = f'{cust_phrase} {slider_value:.0f}%'
         return msg
 
     # Arrange format
