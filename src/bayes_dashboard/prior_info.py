@@ -5,7 +5,7 @@ from . import ids
 from .custom_phrases import PHRASES
 
 
-def render(app: Dash) -> html.Div:
+def render(app: Dash, graph_size: int) -> html.Div:
     '''Renders information about prior to screen
     '''
     # Create Slider
@@ -34,5 +34,5 @@ def render(app: Dash) -> html.Div:
 
     return html.Div([msg, slider],
                     style={'textAlign': 'center',
-                           'width': '32%',
+                           'width': graph_size,
                            'margin-left': '34%'})

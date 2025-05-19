@@ -6,7 +6,7 @@ from . import ids
 from .custom_phrases import PHRASES
 
 
-def render(app: Dash) -> html.Div:
+def render(app: Dash, graph_size: int) -> html.Div:
     '''Renders information about likelihood to screen
     '''
     # Create Slider
@@ -18,7 +18,7 @@ def render(app: Dash) -> html.Div:
         value=40,
         marks={i: f'{i}%' for i in range(0, 101, 10)},
         vertical=True,
-        verticalHeight=600
+        verticalHeight=graph_size
     )
 
     # Create label

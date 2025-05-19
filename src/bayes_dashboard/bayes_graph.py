@@ -5,7 +5,7 @@ from dash import Output, Input
 from . import ids
 
 
-def render(app: Dash) -> html.Div:
+def render(app: Dash, graph_size: int) -> html.Div:
     '''Renders nice graph
     '''
     @app.callback(
@@ -42,7 +42,7 @@ def render(app: Dash) -> html.Div:
                       fillcolor='black',
                       opacity=0.3)
 
-        fig.update_layout(width=615, height=600,
+        fig.update_layout(width=graph_size+15, height=graph_size,
                           margin=dict(l=0, r=0, t=0, b=0))
 
         return fig
