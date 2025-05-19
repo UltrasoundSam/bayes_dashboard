@@ -58,7 +58,7 @@ This app visualizes each component as **proportional areas** within a unit squar
 python app.py
 ```
 
-Then open your browser and go to http://127.0.0.1:8050
+Then open your browser and go to [http://127.0.0.1:8050](http://127.0.0.1:8050)
 
 ### Inspirations & References
 
