@@ -1,4 +1,4 @@
-# Bayes' Law Interactive Demo (Inspired by 3Blue1Brown & Bayesground)
+# Bayes' Law Interactive Demo
 
 This is an interactive Python Dash web app that visualizes **Bayes' Theorem** using a **geometric interpretation**, inspired by [3Blue1Brown’s visual intuition](https://www.youtube.com/watch?v=HZGCoVF3YvM) and [Israel Shalom's Bayesground](https://srulix.com/projects/bayesground).
 
@@ -35,7 +35,7 @@ This app visualizes each component as **proportional areas** within a unit squar
 
 ### Prerequisites
 
-- Python 3.8+
+- Python 3.11+
 - pip (Python package manager)
 
 ### Installation
