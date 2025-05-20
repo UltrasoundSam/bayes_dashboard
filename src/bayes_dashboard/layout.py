@@ -10,7 +10,7 @@ MARGINAL_BACKGROUND = '#ADD8E6'
 POSTERIOR_BACKGROUND = '#ebb07a'
 
 RADIUS_LARGE = '25px'
-GRAPH_SIZE = 600
+GRAPH_SIZE = 525
 
 
 def create_layout(app: Dash) -> html.Div:

@@ -50,8 +50,7 @@ def render(app: Dash, graph_size: int) -> html.Div:
             dbc.Col(html.Div(msg), width=10),
 
         ],
-        align='center',
-        justify='start'
+        align='center'
     )
 
     return html.Div(fmt)
